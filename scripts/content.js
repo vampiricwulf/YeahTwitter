@@ -27,11 +27,11 @@ setTimeout(async () => {
             let modalOpenTime = Date.now();
             let modal = createModal(/*html*/`
                 <h2 style="margin-top:0">
-                    <img src="${chrome.runtime.getURL('images/yeah_on32.png')}" alt="Yeah!" style="width: 24px; height: 24px;margin-bottom: -4px;">
+                    <img src="${chrome.runtime.getURL('images/yeah_on32.png')}" alt=":D!" style="width: 24px; height: 24px;margin-bottom: -4px;">
                     Welcome to Yeah! for Twitter extension!
                 </h2>
-                <p>This extension adds a <b>Yeah!</b> button to all tweets, which is essentially same thing as a Like but public to everyone. Everyone can see who Yeahed a tweet, and everyone can see all your Yeahs on your profile.</p>
-                <p>It doesn't send a spammy reply with an image, instead it saves your Yeahs into a shared database.</p>
+                <p>This extension adds a <b>:D!</b> button to all tweets, which is essentially same thing as a Like but public to everyone. Everyone can see who :D'd a tweet, and everyone can see all your :Ds on your profile.</p>
+                <p>It doesn't send a spammy reply with an image, instead it saves your :Ds into a shared database.</p>
                 <p>
                     In order to get started, you need to authenticate your Twitter account.
                     Click button below, and we'll automatically post a tweet on your behalf that will look like 'yeah-xxxxxxxx'.
@@ -90,14 +90,14 @@ setTimeout(async () => {
                         modalOpenTime = Date.now();
                         let modal2 = createModal(/*html*/`
                             <h2 style="margin-top:0">
-                                <img src="${chrome.runtime.getURL('images/yeah_on32.png')}" alt="Yeah!" style="width: 24px; height: 24px;margin-bottom: -4px;">
+                                <img src="${chrome.runtime.getURL('images/yeah_on32.png')}" alt=":D!" style="width: 24px; height: 24px;margin-bottom: -4px;">
                                 Authentification successful!
                             </h2>
-                            <p>You can now Yeah! on any tweet. Yeah!!!!!</p>
+                            <p>You can now :D! on any tweet. :D!!!!!</p>
                             <div>
                                 btw I (<a href="/d1mden" target="_blank" style="text-decoration:none;color:#1d9bf0">@d1mden</a>) make a lot of cool extensions for Twitter like this, maybe u wanna follow me?
                             </div>
-                            <div style="margin-top: 10px;"><button class="follow-button nice-yeah-button">Yeah! (Follow)</button></div>
+                            <div style="margin-top: 10px;"><button class="follow-button nice-yeah-button">:D! (Follow)</button></div>
                         `, 'authentification-successful', () => {}, () => Date.now() - modalOpenTime > 1500);
         
                         let followButton = modal2.querySelector('.follow-button');
@@ -120,7 +120,7 @@ setTimeout(async () => {
                                 user_id: "1708130407663759360"
                             }).then(() => {
                                 modal2.removeModal();
-                                alert('Thank you! Happy Yeahing!');
+                                alert('Thank you! Happy :D\'ing!');
                             }).catch(e => {
                                 console.error(e);
                                 location.href = '/d1mden';
@@ -327,7 +327,7 @@ function hookIntoInteractions() {
         yeahTab.className = 'yeah-tab';
 
         let span = document.createElement('span');
-        span.innerText = 'Yeahs';
+        span.innerText = ':Ds';
         yeahTab.appendChild(span);
         tablist.appendChild(yeahTab);
 
@@ -343,7 +343,7 @@ function hookIntoInteractions() {
         yeahTab.style.cursor = 'pointer';
 
         let span = document.createElement('span');
-        span.innerText = 'Yeahs';
+        span.innerText = ':Ds';
         span.className = 'tweet-footer-stat-text';
 
         let b = document.createElement('b');
@@ -364,7 +364,7 @@ function hookIntoInteractions() {
                 return alert('You need to authenticate first (refresh page for auth popup to appear)');
             }
             let modal = createModal(/*html*/`
-                <h3>Yeahs</h3>
+                <h3>:Ds</h3>
                 <div class="list"></div>
                 <div class="loader" style="text-align:center">
                     <img src="${chrome.runtime.getURL('images/loading.svg')}" width="64" height="64">
@@ -380,7 +380,7 @@ function hookIntoInteractions() {
 
             if(!data.length) {
                 modal.querySelector('.loader').hidden = true;
-                list.innerHTML = 'No Yeahs yet';
+                list.innerHTML = 'No :Ds yet';
                 return;
             }
 
@@ -456,7 +456,7 @@ function hookIntoProfile() {
         let yeahTab = document.createElement('div');
         yeahTab.className = 'yeah-tab';
         let span = document.createElement('span');
-        span.innerText = 'Yeahs';
+        span.innerText = ':Ds';
 
         yeahTab.appendChild(span);   
         tablist.appendChild(yeahTab);
@@ -471,7 +471,7 @@ function hookIntoProfile() {
         yeahTab.style.cursor = 'pointer';
 
         let span = document.createElement('span');
-        span.innerText = 'Yeahs';
+        span.innerText = ':Ds';
         span.className = 'profile-stat-text';
 
         let span2 = document.createElement('span');
@@ -503,7 +503,7 @@ function hookIntoProfile() {
         }
         let username = window.location.pathname.split('/')[1];
         let modal = createModal(/*html*/`
-            <h3>${username}'s Yeahs</h3>
+            <h3>${username}'s :Ds</h3>
             <div class="list"></div>
             <div class="loader" style="text-align:center">
                 <img src="${chrome.runtime.getURL('images/loading.svg')}" width="64" height="64">
@@ -520,7 +520,7 @@ function hookIntoProfile() {
 
         if(!data.length) {
             modal.querySelector('.loader').hidden = true;
-            list.innerHTML = 'No Yeahs yet';
+            list.innerHTML = 'No :Ds yet';
             return;
         }
 
@@ -528,7 +528,7 @@ function hookIntoProfile() {
 
         if(!tweets.length) {
             modal.querySelector('.loader').hidden = true;
-            list.innerHTML = 'No Yeahs yet';
+            list.innerHTML = 'No :Ds yet';
             return;
         }
 
