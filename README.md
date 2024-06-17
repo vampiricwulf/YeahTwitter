@@ -1,3 +1,7 @@
+### Special Thanks!
+Thank you to [napixelz](https://x.com/napixelz) on Twitter for supplying me with the image! Check him out, he does great work!
+Also thank you to [dimdim](https://dimden.dev/) for creating this silly thing!
+
 # Yeah! for Twitter
 Extension that adds a "Yeah!" button to Twitter. Essentially, it's a public Like button. It doesn't send spammy images into replies, instead it saves your Yeahs into a shared database. Everyone can see who Yeahed a tweet, and what tweets person Yeahed.  
 This extension supports both new Twitter and OldTwitter!  
