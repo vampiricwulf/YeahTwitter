@@ -40,7 +40,7 @@ let fullCode = fs.readFileSync('./us.js', 'utf8')
     .replaceAll('{{font_url}}', rosetta);
 
 // Embed images due to CSP
-const embeddedImages = ['yeah_on32.png', 'yeah_off32.png', 'loading.svg'];
+const embeddedImages = ['yeah_moom_on32.png', 'yeah_moom_off32.png', 'loading.svg'];
 for(let img of embeddedImages) {
     fullCode += `\nYEAH_images['${img}'] = 'data:${img.endsWith('.svg') ? 'image/svg+xml' : 'image/png'};charset=utf-8;base64,${fs.readFileSync(`./images/${img}`, 'base64')}'`
 }
@@ -50,10 +50,10 @@ for(let i in manifest.content_scripts) {
     for(let j in script.js) {
         let code = fs.readFileSync(script.js[j], 'utf8')
             .replaceAll('fetch(', 'GM_fetch(')
-            .replace(/chrome\.runtime\.getURL\('(.+?)'\)/gm, "'https://raw.githubusercontent.com/dimdenGD/YeahTwitter/main/$1'");
+            .replace(/chrome\.runtime\.getURL\('(.+?)'\)/gm, "'https://raw.githubusercontent.com/vampiricwulf/YeahTwitter/main/$1'");
 
         for(let img of embeddedImages) {
-            code = code.replaceAll(`'https://raw.githubusercontent.com/dimdenGD/YeahTwitter/main/images/${img}'`, `YEAH_images['${img}']`);
+            code = code.replaceAll(`'https://raw.githubusercontent.com/dimdenGD/vampiricwulf/main/images/${img}'`, `YEAH_images['${img}']`);
         }
 
         fullCode += `\n\n// ${script.js[j]}\n` + code;
