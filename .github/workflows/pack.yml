@@ -27,6 +27,12 @@ jobs:
       - name: Pack extension
         run: npm run build-action
 
+      - name: Upload for Userscript
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: userscript
+          path: ${{ github.workspace }}/build/userscript.js
+
       - name: Unzip extension
         run: unzip -qq ./build/chrome.zip -d chrome; unzip -qq ./build/firefox.zip -d firefox
         working-directory: ${{ github.workspace }}
