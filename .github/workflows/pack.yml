@@ -28,7 +28,7 @@ jobs:
         run: npm run build-action
 
       - name: Unzip extension
-        run: unzip -qq ../chrome.zip -d chrome; unzip -qq ../firefox.zip -d firefox
+        run: unzip -qq ./build/chrome.zip -d chrome; unzip -qq ./build/firefox.zip -d firefox
         working-directory: ${{ github.workspace }}
         
       - name: Upload for Firefox
