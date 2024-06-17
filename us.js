@@ -1,10 +1,12 @@
 
 // ==UserScript==
-// @name         Yeah! for Twitter
-// @namespace    http://tampermonkey.net/
+// @name         Yeah! for Twitter (Moom edit)
+// @namespace    https://x.com/
 // @version      ${manifest.version}
-// @description  Adds Yeah! button to Twitter, essentially a public Like
+// @description  Adds Yeah! button to Twitter, essentially a public Like (Moom edit)
 // @author       dimden.dev
+// @contributor  VampiricWulf
+// @homepage     https://github.com/vampiricwulf/YeahTwitter
 // @match        https://x.com/*
 // @match        https://twitter.com/*
 // @icon         https://dimden.dev/images/yeah_logo.png
