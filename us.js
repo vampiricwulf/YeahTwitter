@@ -146,29 +146,31 @@ chrome.storage.local = {
     }
 };
 
-GM_registerMenuCommand("Don't like tweet on Yeah", function () {
-    chrome.storage.local.set({
-        settings: {
-            dontLike: true
-        }
+if(this.GM_registerMenuCommand) {
+    GM_registerMenuCommand("Don't like tweet on Yeah", function () {
+        chrome.storage.local.set({
+            settings: {
+                dontLike: true
+            }
+        });
     });
-});
-
-GM_registerMenuCommand("Like tweet on Yeah", function () {
-    chrome.storage.local.set({
-        settings: {
-            dontLike: false
-        }
+    
+    GM_registerMenuCommand("Like tweet on Yeah", function () {
+        chrome.storage.local.set({
+            settings: {
+                dontLike: false
+            }
+        });
     });
-});
-
-GM_registerMenuCommand("Clear account tokens", function () {
-    chrome.storage.local.remove(['yeahToken', 'yeahTokens']);
-});
-
-GM_registerMenuCommand("Reset popup settings", function () {
-    chrome.storage.local.remove(['ignorePopup']);
-});
+    
+    GM_registerMenuCommand("Clear account tokens", function () {
+        chrome.storage.local.remove(['yeahToken', 'yeahTokens']);
+    });
+    
+    GM_registerMenuCommand("Reset popup settings", function () {
+        chrome.storage.local.remove(['ignorePopup']);
+    });
+}
 
 let fontstyle = document.createElement('style');
 fontstyle.innerHTML = `
@@ -178,3 +180,5 @@ fontstyle.innerHTML = `
 }
 `;
 document.head.appendChild(fontstyle);
+
+let YEAH_images = {};
