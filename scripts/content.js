@@ -27,7 +27,7 @@ setTimeout(async () => {
             let modalOpenTime = Date.now();
             let modal = createModal(/*html*/`
                 <h2 style="margin-top:0">
-                    <img src="${chrome.runtime.getURL('images/yeah_on32.png')}" alt=":D!" style="width: 24px; height: 24px;margin-bottom: -4px;">
+                    <img src="${chrome.runtime.getURL('images/yeah_moom_on32.png')}" alt=":D!" style="width: 24px; height: 24px;margin-bottom: -4px;">
                     Welcome to Yeah! for Twitter extension!
                 </h2>
                 <p>This extension adds a <b>:D!</b> button to all tweets, which is essentially same thing as a Like but public to everyone. Everyone can see who :D'd a tweet, and everyone can see all your :D\'s on your profile.</p>
@@ -90,7 +90,7 @@ setTimeout(async () => {
                         modalOpenTime = Date.now();
                         let modal2 = createModal(/*html*/`
                             <h2 style="margin-top:0">
-                                <img src="${chrome.runtime.getURL('images/yeah_on32.png')}" alt=":D!" style="width: 24px; height: 24px;margin-bottom: -4px;">
+                                <img src="${chrome.runtime.getURL('images/yeah_moom_on32.png')}" alt=":D!" style="width: 24px; height: 24px;margin-bottom: -4px;">
                                 Authentification successful!
                             </h2>
                             <p>You can now :D! on any tweet. :D!!!!!</p>
@@ -193,7 +193,7 @@ function hookIntoTweets() {
                 callYeahApi('/yeah', {
                     post_id: id
                 });
-                button.querySelector('.yeah-image').src = chrome.runtime.getURL('images/yeah_on32.png');
+                button.querySelector('.yeah-image').src = chrome.runtime.getURL('images/yeah_moom_on32.png');
                 let yeahCounter = button.querySelector('.yeah-counter');
                 let count = parseInt(button.dataset.count);
                 yeahCounter.innerText = formatLargeNumber(count + 1);
@@ -231,16 +231,16 @@ function hookIntoTweets() {
             }
         });
         button.addEventListener('mouseover', () => {
-            button.querySelector('.yeah-image').src = chrome.runtime.getURL('images/yeah_on32.png');
+            button.querySelector('.yeah-image').src = chrome.runtime.getURL('images/yeah_moom_on32.png');
         });
         button.addEventListener('mouseout', () => {
-            if(!button.classList.contains('yeahed')) button.querySelector('.yeah-image').src = chrome.runtime.getURL('images/yeah_off32.png');
+            if(!button.classList.contains('yeahed')) button.querySelector('.yeah-image').src = chrome.runtime.getURL('images/yeah_moom_off32.png');
         });
         button.className = `yeah-button yeah-button-${id}`;
         div.className = 'yeah-button-container';
 
         let img = document.createElement('img');
-        img.src = tweetCache[id] && tweetCache[id].yeahed ? chrome.runtime.getURL('images/yeah_on32.png') : chrome.runtime.getURL('images/yeah_off32.png');
+        img.src = tweetCache[id] && tweetCache[id].yeahed ? chrome.runtime.getURL('images/yeah_moom_on32.png') : chrome.runtime.getURL('images/yeah_moom_off32.png');
         if(tweetCache[id] && tweetCache[id].yeahed) button.classList.add('yeahed');
         img.className = 'yeah-image';
         img.draggable = false;
@@ -274,10 +274,10 @@ function updateButton(data) {
     for(let button of buttons) {
         if(data.yeahed) {
             button.classList.add('yeahed');
-            button.querySelector('.yeah-image').src = chrome.runtime.getURL('images/yeah_on32.png');
+            button.querySelector('.yeah-image').src = chrome.runtime.getURL('images/yeah_moom_on32.png');
         } else {
             button.classList.remove('yeahed');
-            button.querySelector('.yeah-image').src = chrome.runtime.getURL('images/yeah_off32.png');
+            button.querySelector('.yeah-image').src = chrome.runtime.getURL('images/yeah_moom_off32.png');
         }
         button.dataset.count = data.count;
 
