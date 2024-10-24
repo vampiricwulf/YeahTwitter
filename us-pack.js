@@ -7,6 +7,12 @@ const fsp = require('fs').promises;
 const fs = require('fs');
 const path = require('path');
 
+if(!fs.existsSync('./build')) {
+    fs.mkdirSync('./build');
+} else {
+    fs.rmSync('./build', { recursive: true });
+    fs.mkdirSync('./build');
+}
 
 console.log("Creating userscript...");
 let manifest = JSON.parse(fs.readFileSync('./manifest.json', 'utf8'));
