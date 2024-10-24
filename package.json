@@ -6,7 +6,8 @@
   "scripts": {
     "test": "node test.js",
     "build": "node pack.js",
-    "build-action": "node pack.js -a"
+    "build-action": "node pack.js -a",
+    "build-us": "node us-pack.js -a"
   },
   "repository": {
     "type": "git",
