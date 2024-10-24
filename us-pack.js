@@ -37,4 +37,3 @@ for(let i in manifest.content_scripts) {
 }
 
 fs.writeFileSync('./build/userscript.js', fullCode);
-});
