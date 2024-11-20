@@ -2,7 +2,7 @@
 // ==UserScript==
 // @name         Yeah! for Twitter (Moom edit)
 // @namespace    https://x.com/
-// @version      1.1.1
+// @version      1.1.2
 // @description  Adds Yeah! button to Twitter, essentially a public Like (Moom edit)
 // @author       dimden.dev
 // @contributor  VampiricWulf
@@ -422,7 +422,7 @@ const API = {
             return new Promise((resolve, reject) => {
                 GM_fetch(`https://api.${location.hostname}/1.1/account/verify_credentials.json`, {
                     headers: {
-                        "authorization": publicToken,
+                        "authorization": "Bearer AAAAAAAAAAAAAAAAAAAAAG5LOQEAAAAAbEKsIYYIhrfOQqm4H8u7xcahRkU%3Dz98HKmzbeXdKqBfUDmElcqYl0cmmKY9KdS2UoNIz3Phapgsowi",
                         "x-csrf-token": getCsrf(),
                         "x-twitter-auth-type": "OAuth2Session"
                     },
