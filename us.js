@@ -1,4 +1,3 @@
-
 // ==UserScript==
 // @name         Yeah! for Twitter (Moom edit)
 // @namespace    https://x.com/
