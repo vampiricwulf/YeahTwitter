@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Yeah! for Twitter (Moom edit)
 // @namespace    https://x.com/
-// @version      1.1.3
+// @version      1.1.4
 // @description  Adds Yeah! button to Twitter, essentially a public Like (Moom edit)
 // @author       dimden.dev
 // @contributor  VampiricWulf
